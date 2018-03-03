@@ -25,6 +25,7 @@ Cerinte comune tuturor temelor:
 
 
 Tema 16. grafuri ponderate, reprezentate ca grafuri neorientate cu ponderi atasate muchiilor, in ce mod doreste programatorul:
+
     - clasa graf ponderat sa contina metode pentru:
 
     - citirea grafului, care sa supraincarce operatorul >>;
