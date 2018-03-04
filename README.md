@@ -17,11 +17,11 @@ Cerinte comune tuturor temelor:
 
     - citirea informațiilor complete a n obiecte, memorarea și afisarea acestora
 
-    - implementarea constructorului de copiere si supraincarcarea operatorului =, pentru fiecare clasa
+    - DONE: implementarea constructorului de copiere si supraincarcarea operatorului =, pentru fiecare clasa
 
-    - supraincarcarea operatorului ==, a lui !=, si a lui < (pentru a putea compara 2 obiecte si a putea sorta un vector de obiecte folosind functia sort)
+    - DONE: supraincarcarea operatorului ==, a lui !=, si a lui < (pentru a putea compara 2 obiecte si a putea sorta un vector de obiecte folosind functia sort)
 
-    - bonus 1p (care se acorda daca toate temele au avut 10) pentru folosirea de templateuri, astfel incat tema aceasta ar putea fi notata cu 11.
+    - DONE: bonus 1p (care se acorda daca toate temele au avut 10) pentru folosirea de templateuri, astfel incat tema aceasta ar putea fi notata cu 11.
 
 
 Tema 16. grafuri ponderate, reprezentate ca grafuri neorientate cu ponderi atasate muchiilor, in ce mod doreste programatorul:
@@ -34,7 +34,7 @@ Tema 16. grafuri ponderate, reprezentate ca grafuri neorientate cu ponderi atasa
 
     - citirea si afisarea sa foloseasca acelasi mod de reprezentare a grafului, care sa arate intreaga structura a grafului;
 
-    - ???? determinarea matricii ponderilor drumurilor cu ponderi minime;
+    - determinarea matricii ponderilor drumurilor cu ponderi minime;
 
     - determinarea nodurilor intermediare de pe drumul de pondere minima intre doua noduri;
 
@@ -51,4 +51,4 @@ Tema 16. grafuri ponderate, reprezentate ca grafuri neorientate cu ponderi atasa
 
     -Clasa graf trebuie sa foloseasca implementarea unei clase de Nod pentru a retine informatia despre un anumit nod.
 
-    -Clasa trebuie implementata folosind alocare dinamica
+    - DONE: Clasa trebuie implementata folosind alocare dinamica

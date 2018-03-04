@@ -86,6 +86,9 @@
 		<Unit filename="C:/Users/chris/Dropbox/University/Y1-S2/POO/POO_Tema1_16/main.cpp">
 			<Option target="POO_Tema1_16"/>
 		</Unit>
+		<Unit filename="C:/Users/chris/Dropbox/University/Y1-S2/POO/POO_Tema1_16/vector.h">
+			<Option target="POO_Tema1_16"/>
+		</Unit>
 		<Unit filename="C:/Users/chris/Dropbox/University/Y1-S2/POO/POO_Tema1_16/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
