@@ -9,13 +9,13 @@ Cerinte comune tuturor temelor:
     - ATENTIE: functiile pe care le-am numit mai jos metode (fie ca sunt supraincarcari de operatori, fie altfel de functii),
         pot fi implementate ca functii prieten in loc de metode ale claselor respective, daca se considera ca aceasta alegere este mai naturala;
 
-    - supraincarcarea operatorilor << si >> pentru iesiri si intrari de obiecte, dupa indicatiile de mai jos, astfel incat sa fie permise (si ilustrate in program):
+    - ??? Is this necessary for all objects? (if not, DONE): supraincarcarea operatorilor << si >> pentru iesiri si intrari de obiecte, dupa indicatiile de mai jos, astfel incat sa fie permise (si ilustrate in program):
 
-    - citirea de la tastatura si dintr-un fisier;
+    - DONE: citirea de la tastatura si dintr-un fisier;
 
-    - scrierea pe ecran sau intr-un fisier;
+    - DONE: scrierea pe ecran sau intr-un fisier;
 
-    - citirea informațiilor complete a n obiecte, memorarea și afisarea acestora
+    - DONE: citirea informațiilor complete a n obiecte, memorarea și afisarea acestora
 
     - DONE: implementarea constructorului de copiere si supraincarcarea operatorului =, pentru fiecare clasa
 
@@ -28,15 +28,15 @@ Tema 16. grafuri ponderate, reprezentate ca grafuri neorientate cu ponderi atasa
 
     - clasa graf ponderat sa contina metode pentru:
 
-    - citirea grafului, care sa supraincarce operatorul >>;
+    - DONE: citirea grafului, care sa supraincarce operatorul >>;
 
-    - afisarea grafului, care sa supraincarce operatorul <<;
+    - DONE: afisarea grafului, care sa supraincarce operatorul <<;
 
-    - citirea si afisarea sa foloseasca acelasi mod de reprezentare a grafului, care sa arate intreaga structura a grafului;
+    - DONE: citirea si afisarea sa foloseasca acelasi mod de reprezentare a grafului, care sa arate intreaga structura a grafului;
 
-    - determinarea matricii ponderilor drumurilor cu ponderi minime;
+    - DONE: determinarea matricii ponderilor drumurilor cu ponderi minime;
 
-    - determinarea nodurilor intermediare de pe drumul de pondere minima intre doua noduri;
+    - DONE: determinarea nodurilor intermediare de pe drumul de pondere minima intre doua noduri;
 
     - determinarea componentelor conexe, nu ca grafuri, ci ca liste de noduri;
 
@@ -49,6 +49,6 @@ Tema 16. grafuri ponderate, reprezentate ca grafuri neorientate cu ponderi atasa
         doua grafuri, si cu multimea muchiilor egala cu intersectia multimilor muchiilor acelor doua grafuri,
         cu fiecare muchie avand ca pondere minimul dintre ponderile muchiilor corespunzatoare din acele doua grafuri;
 
-    -Clasa graf trebuie sa foloseasca implementarea unei clase de Nod pentru a retine informatia despre un anumit nod.
+    - DONE: Clasa graf trebuie sa foloseasca implementarea unei clase de Nod pentru a retine informatia despre un anumit nod.
 
     - DONE: Clasa trebuie implementata folosind alocare dinamica

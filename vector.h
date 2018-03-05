@@ -22,7 +22,7 @@ class vector {
     int _capacity;
 
     void realloc(int newCap) {
-        newCap = std::max(newCap, 0);
+        newCap = max(newCap, 0);
         T *newVect = new T[newCap];
         for (int i = 0; i < _size; ++i) {
             newVect[i] = vect[i];
@@ -40,12 +40,11 @@ class vector {
         _capacity = newCap;
     }
 
-    //TODO merge arrays
     void mergeArrays(T *A, int sizeA, T *B, int sizeB) {
         int aPos = 0;
         int bPos = 0;
 
-        T newVect = new T[sizeA + sizeB];
+        T *newVect = new T[sizeA + sizeB];
         int newPos = 0;
 
         while (aPos < sizeA and bPos < sizeB) {
@@ -73,6 +72,8 @@ class vector {
         for (int i = 0; i < newPos; ++i) {
             A[i] = newVect[i];
         }
+
+        delete[] newVect;
     }
 
     inline int getCapForSize(int newSize) {
@@ -87,12 +88,11 @@ class vector {
 public:
 
     vector() {
-        vect = new T;
+        vect = new T[1];
         _size = 0;
         _capacity = 1;
     }
 
-    //TODO vector with given size
     explicit vector(int newSize) {
         _size = newSize;
         alloc(getCapForSize(newSize));
@@ -113,8 +113,8 @@ public:
     }
 
     inline void resize(int newSize) {
-        _size = newSize;
         realloc(getCapForSize(newSize));
+        _size = newSize;
     }
 
     inline void push_back(T info) {
@@ -156,10 +156,10 @@ public:
 
         int sizeLf = med - lf + 1;
         int sizeRg = rg - med;
-        mergeArrays(vect, sizeLf, vect + sizeLf, sizeRg);
+        mergeArrays(vect + lf, sizeLf, vect + lf + sizeLf, sizeRg);
     }
 
-    T & operator [](const int &index) const {
+    T &operator [](const int &index) const {
         return vect[index];
     }
 
@@ -179,7 +179,7 @@ public:
         if (_size == other._size) {
             bool areEqual = true;
             for (int i = 0; i < _size; ++i) {
-                areEqual = std::min(areEqual, vect[i] == other[i]);
+                areEqual = min(areEqual, vect[i] == other[i]);
             }
 
             return areEqual;
