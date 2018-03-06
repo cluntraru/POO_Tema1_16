@@ -436,6 +436,7 @@ public:
         edges = other.edges;
         minDist = other.minDist;
         nextNodeInPath = other.nextNodeInPath;
+        compList = other.compList;
         return *this;
     }
 
