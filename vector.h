@@ -5,6 +5,8 @@
 #ifndef POO_TEMA1_16_VECTOR_H
 #define POO_TEMA1_16_VECTOR_H
 
+#include <functional>
+
 template <typename T>
 inline T min(const T& a, const T& b) {
     return (a < b) ? a : b;
@@ -43,7 +45,7 @@ class vector {
         _capacity = newCap;
     }
 
-    void mergeArrays(T *A, int sizeA, T *B, int sizeB) {
+    void mergeArrays(T *A, int sizeA, T *B, int sizeB, bool (*lessThan)(T, T)) {
         int aPos = 0;
         int bPos = 0;
 
@@ -51,7 +53,8 @@ class vector {
         int newPos = 0;
 
         while (aPos < sizeA and bPos < sizeB) {
-            if (A[aPos] < B[bPos]) {
+//            if (A[aPos] < B[bPos]) {
+            if (lessThan(A[aPos], B[bPos])) {
                 newVect[newPos] = A[aPos];
                 ++aPos;
             }
@@ -156,18 +159,18 @@ public:
         return _size == 0;
     }
 
-    void mergeSort(int lf, int rg) {
+    void mergeSort(int lf, int rg, bool (*lessThan)(T a, T b)) {
         if (lf == rg) {
             return;
         }
 
         int med = (lf + rg) / 2;
-        mergeSort(lf, med);
-        mergeSort(med + 1, rg);
+        mergeSort(lf, med, lessThan);
+        mergeSort(med + 1, rg, lessThan);
 
         int sizeLf = med - lf + 1;
         int sizeRg = rg - med;
-        mergeArrays(vect + lf, sizeLf, vect + lf + sizeLf, sizeRg);
+        mergeArrays(vect + lf, sizeLf, vect + lf + sizeLf, sizeRg, lessThan);
     }
 
     T &operator [](const int &index) const {

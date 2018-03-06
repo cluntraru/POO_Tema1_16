@@ -66,9 +66,9 @@ int main() {
     Graph<Node> g2;
 
     //Read + write (node)
-    Node n;
-    fin >> n;
-    fout << n << '\n';
+//    Node n;
+//    fin >> n;
+//    fout << n << '\n';
 
 //    //Read + write (console)
 //    std::cin >> g;
@@ -82,13 +82,19 @@ int main() {
     fout << std::boolalpha << "Graph is connected = " << g.isConnected() << "\n\n";
     g.printConnectedComponents(fout);
 
+
     //Product of 2 graphs
     fin >> g2;
     fout << "Print product of two graphs:\n" << g * g2;
+
+    fout << "Graph is equal to it's square: " << (g == g * g) << "\n\n";
 
     //Print distance matrix and path between 2 nodes
     g.royFloyd();
     g.printMinDistMatrix(fout);
     g.printShortestPath(fout, 4, 5);
+
+    Graph <Node> MST = g.minSpanningTree(1);
+    fout << "Minimum spanning tree:\n" << MST;
     return 0;
 }
