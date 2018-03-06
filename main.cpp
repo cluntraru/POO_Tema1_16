@@ -6,6 +6,7 @@
 std::ifstream fin("test.in");
 std::ofstream fout("test.out");
 
+//A Node must include the cost to get to a given index from a certain "current" index
 class Node {
     int _index, _costTo;
 
@@ -48,11 +49,26 @@ public:
     bool operator < (const Node &other) const {
         return _index < other._index;
     }
+
+    friend std::istream &operator >> (std::istream &is, Node &node) {
+        is >> node._index >> node._costTo;
+        return is;
+    }
+
+    friend std::ostream &operator << (std::ostream &os, Node &node) {
+        os << "Printing node " << node._index << ": " << node._costTo << '\n';
+        return os;
+    }
 };
 
 int main() {
     Graph<Node> g;
     Graph<Node> g2;
+
+    //Read + write (node)
+    Node n;
+    fin >> n;
+    fout << n << '\n';
 
 //    //Read + write (console)
 //    std::cin >> g;

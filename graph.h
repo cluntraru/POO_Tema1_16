@@ -370,17 +370,14 @@ public:
     //connected components
     void connectedComponents() {
         vector <bool> used(_nodeCnt);
+        vector <int> currComp;
 
         for (int i = 0; i < _nodeCnt; ++i) {
-            vector <int> currComp;
-
             if (!used[i]) {
                 currComp.clear();
                 currCC(currComp, used, i);
                 compList.push_back(currComp);
             }
-
-
         }
     }
 

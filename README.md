@@ -9,7 +9,7 @@ Cerinte comune tuturor temelor:
     - ATENTIE: functiile pe care le-am numit mai jos metode (fie ca sunt supraincarcari de operatori, fie altfel de functii),
         pot fi implementate ca functii prieten in loc de metode ale claselor respective, daca se considera ca aceasta alegere este mai naturala;
 
-    - ??? Is this necessary for all objects? (if not, DONE): supraincarcarea operatorilor << si >> pentru iesiri si intrari de obiecte, dupa indicatiile de mai jos, astfel incat sa fie permise (si ilustrate in program):
+    - DONE: supraincarcarea operatorilor << si >> pentru iesiri si intrari de obiecte, dupa indicatiile de mai jos, astfel incat sa fie permise (si ilustrate in program):
 
     - DONE: citirea de la tastatura si dintr-un fisier;
 
@@ -38,13 +38,13 @@ Tema 16. grafuri ponderate, reprezentate ca grafuri neorientate cu ponderi atasa
 
     - DONE: determinarea nodurilor intermediare de pe drumul de pondere minima intre doua noduri;
 
-    - determinarea componentelor conexe, nu ca grafuri, ci ca liste de noduri;
+    - DONE: determinarea componentelor conexe, nu ca grafuri, ci ca liste de noduri;
 
     - determinarea arborelui partial de cost minim al componentei conexe a unui nod dat;
 
-    - o metoda care sa determine daca graful este conex, care poate folosi orice metoda descrisa anterior;
+    - DONE: o metoda care sa determine daca graful este conex, care poate folosi orice metoda descrisa anterior;
 
-    - o metoda de supraincarcare a operatorului *, care sa determine, din doua grafuri ponderate
+    - DONE: o metoda de supraincarcare a operatorului *, care sa determine, din doua grafuri ponderate
         avand aceeasi multime de noduri, graful ponderat cu aceeasi multime de noduri ca si acele
         doua grafuri, si cu multimea muchiilor egala cu intersectia multimilor muchiilor acelor doua grafuri,
         cu fiecare muchie avand ca pondere minimul dintre ponderile muchiilor corespunzatoare din acele doua grafuri;
