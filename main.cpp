@@ -92,7 +92,7 @@ int main() {
     //Print distance matrix and path between 2 nodes
     g.royFloyd();
     g.printMinDistMatrix(fout);
-    g.printShortestPath(fout, 4, 5);
+    g.printShortestPath(fout, 0, 2);
 
     Graph <Node> MST = g.minSpanningTree(1);
     fout << "Minimum spanning tree:\n" << MST;
