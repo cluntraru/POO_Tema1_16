@@ -62,6 +62,10 @@ int main() {
     fin >> g;
     fout << "Print read graph to file:\n" << g;
 
+    g.connectedComponents();
+    fout << std::boolalpha << "Graph is connected = " << g.isConnected() << "\n\n";
+    g.printConnectedComponents(fout);
+
     //Product of 2 graphs
     fin >> g2;
     fout << "Print product of two graphs:\n" << g * g2;

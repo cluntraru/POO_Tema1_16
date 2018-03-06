@@ -1,7 +1,8 @@
 Print read graph to file:
 Graph:
 
-7 10
+7 11
+0 1 3
 1 2 1
 1 5 5
 1 3 7
@@ -14,10 +15,18 @@ Graph:
 5 6 9
 ------------------------
 
+Graph is connected = true
+
+Connected components in current graph:
+
+0: 0 1 2 5 6 3 4 
+------------------------
+
 Print product of two graphs:
 Graph:
 
-7 10
+7 11
+0 1 3
 1 2 1
 1 3 7
 1 5 4
@@ -32,13 +41,13 @@ Graph:
 
 Roy-Floyd distances:
 
-0 -1 -1 -1 -1 -1 -1 
--1 0 1 7 7 5 5 
--1 1 0 8 6 6 4 
--1 7 8 0 8 12 12 
--1 7 6 8 0 12 10 
--1 5 6 12 12 0 9 
--1 5 4 12 10 9 0 
+0 3 4 10 10 8 8 
+3 0 1 7 7 5 5 
+4 1 0 8 6 6 4 
+10 7 8 0 8 12 12 
+10 7 6 8 0 12 10 
+8 5 6 12 12 0 9 
+8 5 4 12 10 9 0 
 ------------------------
 
 Shortest path between 4 and 5:

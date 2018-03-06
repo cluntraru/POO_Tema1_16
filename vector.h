@@ -22,8 +22,12 @@ class vector {
     int _capacity;
 
     void realloc(int newCap) {
-        newCap = max(newCap, 0);
-        T *newVect = new T[newCap];
+        newCap = max(newCap, 1);
+        if (_capacity == newCap) {
+            return;
+        }
+
+        T *newVect = new T[newCap]();
         for (int i = 0; i < _size; ++i) {
             newVect[i] = vect[i];
         }
@@ -35,8 +39,7 @@ class vector {
     }
 
     void alloc(int newCap) {
-        delete[] vect;
-        vect = new T[newCap];
+        vect = new T[newCap]();
         _capacity = newCap;
     }
 
@@ -44,7 +47,7 @@ class vector {
         int aPos = 0;
         int bPos = 0;
 
-        T *newVect = new T[sizeA + sizeB];
+        T *newVect = new T[sizeA + sizeB]();
         int newPos = 0;
 
         while (aPos < sizeA and bPos < sizeB) {
@@ -88,7 +91,7 @@ class vector {
 public:
 
     vector() {
-        vect = new T[1];
+        vect = new T[1]();
         _size = 0;
         _capacity = 1;
     }
@@ -99,17 +102,25 @@ public:
     }
 
     vector(const vector &other) {
-        _size = other._size;
-        _capacity = other._capacity;
-        vect = new T[_capacity];
-
-        for (int i = 0; i < _size; ++i) {
-            vect[i] = other[i];
-        }
+        *this = other;
+//        _size = other._size;
+//        _capacity = other._capacity;
+//        vect = new T[_capacity];
+//
+//        for (int i = 0; i < _size; ++i) {
+//            vect[i] = other[i];
+//        }
     }
 
     ~vector() {
         delete[] vect;
+    }
+
+    inline void clear() {
+//        resize(0);
+        while (size()) {
+            pop_back();
+        }
     }
 
     inline void resize(int newSize) {
@@ -117,12 +128,12 @@ public:
         _size = newSize;
     }
 
-    inline void push_back(T info) {
-        ++_size;
-        if (_size > _capacity) {
+    inline void push_back(const T &info) {
+        if (_size + 1 > _capacity) {
             realloc(_capacity * 2);
         }
 
+        ++_size;
         vect[_size - 1] = info;
     }
 
@@ -166,7 +177,7 @@ public:
     vector &operator = (const vector &other) {
         _size = other._size;
         _capacity = other._capacity;
-        vect = new T[_capacity];
+        vect = new T[_capacity]();
 
         for (int i = 0; i < _size; ++i) {
             vect[i] = other[i];
