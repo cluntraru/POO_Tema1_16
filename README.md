@@ -2,6 +2,7 @@
 Prima tema la laboratorul de POO, tema 16 din lista (graf ponderat neorientat)
 
 Necessary files to compile and run: /main.cpp, /graph.h, /vector.h
+
 Sample input and output: /cmake-build-debug/test.in, /cmake-build-debug/test.out
 
 Cerinte comune tuturor temelor:
