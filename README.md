@@ -42,7 +42,7 @@ Tema 16. grafuri ponderate, reprezentate ca grafuri neorientate cu ponderi atasa
 
     - DONE: determinarea componentelor conexe, nu ca grafuri, ci ca liste de noduri;
 
-    - determinarea arborelui partial de cost minim al componentei conexe a unui nod dat;
+    - DONE: determinarea arborelui partial de cost minim al componentei conexe a unui nod dat;
 
     - DONE: o metoda care sa determine daca graful este conex, care poate folosi orice metoda descrisa anterior;
 
