@@ -5,8 +5,6 @@
 #ifndef POO_TEMA1_16_VECTOR_H
 #define POO_TEMA1_16_VECTOR_H
 
-#include <functional>
-
 template <typename T>
 inline T min(const T& a, const T& b) {
     return (a < b) ? a : b;
@@ -117,6 +115,14 @@ public:
 
     ~vector() {
         delete[] vect;
+    }
+
+    inline T *begin() const {
+        return vect;
+    }
+
+    inline T *end() const {
+        return vect + _size;
     }
 
     inline void clear() {

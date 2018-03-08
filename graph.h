@@ -132,6 +132,10 @@ public:
     }
 };
 
+inline bool byCostCmp(const Edge &a, const Edge &b) {
+    return a.getCost() < b.getCost();
+}
+
 template <typename NodeT>
 class Graph {
     int _nodeCnt, _edgeCnt;
@@ -146,7 +150,6 @@ class Graph {
     vector<vector<int>> compList;
     vector<int> inCC;
 
-    //TODO add new stuff here
     void resize(int newSize) {
         _nodeCnt = newSize;
         G.resize(newSize);
@@ -205,7 +208,6 @@ class Graph {
 public:
     Graph() : _nodeCnt(0), _edgeCnt(0) {}
 
-    //TODO add new stuff here
     explicit Graph(int nodeCnt) {
         _nodeCnt = nodeCnt;
         _edgeCnt = 0;
@@ -213,7 +215,6 @@ public:
         initializeRoyFloyd();
     }
 
-    //TODO add new stuff here
     Graph(const Graph &other) {
         *this = other;
 //        _nodeCnt = other._nodeCnt;
@@ -418,7 +419,7 @@ public:
         return (compList.size() == 1);
     }
 
-    //TODO minimum spanning tree of a connected component
+    //minimum spanning tree of a connected component
     Graph minSpanningTree(int node) {
         vector <int> father(_nodeCnt);
         vector <int> depth(_nodeCnt);
@@ -441,9 +442,11 @@ public:
             }
         }
 
-        ccEdges.mergeSort(0, ccEdges.size() - 1, [](Edge a, Edge b) {
-            return a.getCost() < b.getCost();
-        });
+        std::sort(ccEdges.begin(), ccEdges.end(), byCostCmp);
+
+//        ccEdges.mergeSort(0, ccEdges.size() - 1, [](Edge a, Edge b) {
+//            return a.getCost() < b.getCost();
+//        });
 
         Graph MST(_nodeCnt);
 
@@ -466,13 +469,15 @@ public:
         Graph g1 = *this;
         Graph g2 = other;
 
-        g1.edges.mergeSort(0, g1._edgeCnt - 1, [](Edge a, Edge b) {
-            return a < b;
-        });
+        std::sort(g1.edges.begin(), g1.edges.end());
+//        g1.edges.mergeSort(0, g1._edgeCnt - 1, [](Edge a, Edge b) {
+//            return a < b;
+//        });
 
-        g2.edges.mergeSort(0, g2._edgeCnt - 1, [](Edge a, Edge b) {
-            return a < b;
-        });
+        std::sort(g2.edges.begin(), g2.edges.end());
+//        g2.edges.mergeSort(0, g2._edgeCnt - 1, [](Edge a, Edge b) {
+//            return a < b;
+//        });
 
         Graph ans(max(g1.size(), g2.size()));
 
@@ -491,9 +496,9 @@ public:
                 }
             }
 
-            if (!added) {
-                ans.addEdge(g1.getEdge(i));
-            }
+//            if (!added) {
+//                ans.addEdge(g1.getEdge(i));
+//            }
         }
 
         return ans;
@@ -518,9 +523,10 @@ public:
 
     bool operator == (const Graph &other) const {
         vector <Edge> v = edges;
-        v.mergeSort(0, v.size() - 1, [](Edge a, Edge b) {
-            return a < b;
-        });
+        std::sort(v.begin(), v.end());
+//        v.mergeSort(0, v.size() - 1, [](Edge a, Edge b) {
+//            return a < b;
+//        });
 
         bool areEqual = true;
         for (int i = 0; i < v.size() and areEqual; ++i) {
