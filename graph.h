@@ -22,6 +22,8 @@ public:
         _currNode = other._currNode;
     }
 
+    ~NodeList() {}
+
     explicit NodeList(int currNode) {
         _currNode = currNode;
     }
@@ -86,6 +88,8 @@ public:
         _nodeD = other._nodeD;
         _cost = other._cost;
     }
+
+    ~Edge() {}
 
     inline int getSource() const {
         return _nodeS;
@@ -219,6 +223,8 @@ public:
 //        minDist = other.minDist;
 //        nextNodeInPath = other.nextNodeInPath;
     }
+
+    ~Graph() {}
 
     friend std::istream &operator >> (std::istream &is, Graph <NodeT> &g) {
         int inputEdgeCnt;
